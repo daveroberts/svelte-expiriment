@@ -1,3 +1,5 @@
 import HelloWorld from './components/HelloWorld.html';
-
-console.log("Hello World");
+var app = new HelloWorld({
+  target: document.getElementById('main'),
+  data: { name: 'quick builds' }
+});

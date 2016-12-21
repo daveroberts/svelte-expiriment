@@ -1,1 +1,19 @@
-<h1>It don't get much easier than this.</h1>
+<h1>Changed HTML file {{name}}</h1>
+<div>Slow: {{count}}</div>
+<button on:click='set({count: count+1})'>+1</button>
+<Second></Second>
+<Third></Third>
+<script>
+  import Second from './Second.html';
+  import Third from './Third.html';
+  export default {
+    data(){
+      return {
+        count: 55
+      };
+    },
+    components: {
+      Third
+    }
+  };
+</script>
