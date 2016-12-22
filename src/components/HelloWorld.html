@@ -2,10 +2,10 @@
 <div>Slow: {{count}}</div>
 <button on:click='set({count: count+1})'>+1</button>
 <Second></Second>
-<Third></Third>
+<Form></Form>
 <script>
   import Second from './Second.html';
-  import Third from './Third.html';
+  import Form from './Form.html';
   export default {
     data(){
       return {
@@ -13,7 +13,8 @@
       };
     },
     components: {
-      Third
+      Second,
+      Form
     }
   };
 </script>

@@ -1,0 +1,21 @@
+<h2>This is the form</h2>
+{{#each people as person}}
+  <div><ClickableCell val="{{person.name}}"></ClickableCell></div>
+{{/each}}
+<input type="text" />
+<script>
+  import ClickableCell from './ClickableCell.html';
+  export default {
+    data(){
+      return {
+        people: [
+          {name: 'Dave', age: 34},
+          {name: 'Jen', age: 35}
+        ]
+      }
+    },
+    components: {
+      ClickableCell
+    }
+  }
+</script>

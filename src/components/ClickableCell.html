@@ -1,0 +1,24 @@
+<div>
+  <input class="{{editing?'':'hidden'}}" ref:input type="text" on:blur="lostFocus(event)" bind:value="val" />
+  <div class="{{editing?'hidden':''}}" on:click="setEditing(event)">{{val}}</div>
+</div>
+<style>
+  .hidden{ display: none; }
+  input{ border-color: red; }
+</style>
+<script>
+  export default {
+    onrender(){
+    },
+    methods: {
+      setEditing: function(e){
+        setTimeout(()=>{this.refs.input.select();},0);
+        // We can't use if else blocks because refs not stored that way
+        this.set({editing: true});
+      },
+      lostFocus: function(e){
+        this.set({editing: false});
+      }
+    }
+  }
+</script>
