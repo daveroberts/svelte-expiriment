@@ -2,7 +2,6 @@
 {{#each people as person}}
   <div><ClickableCell val="{{person.name}}"></ClickableCell></div>
 {{/each}}
-<input type="text" />
 <script>
   import ClickableCell from './ClickableCell.html';
   export default {
@@ -13,6 +12,8 @@
           {name: 'Jen', age: 35}
         ]
       }
+    },
+    methods: {
     },
     components: {
       ClickableCell

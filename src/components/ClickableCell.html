@@ -9,6 +9,9 @@
 <script>
   export default {
     onrender(){
+      this.on('stop:edit', event=>{
+        console.log("stop:edit called");
+      });
     },
     methods: {
       setEditing: function(e){
@@ -17,8 +20,9 @@
         this.set({editing: true});
       },
       lostFocus: function(e){
-        this.set({editing: false});
-      }
+        this.fire("stop:edit", {foo: 42});
+      },
+      
     }
   }
 </script>
